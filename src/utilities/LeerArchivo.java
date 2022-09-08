@@ -30,10 +30,17 @@ public class LeerArchivo {
         String extension = archivo.getName().substring(archivo.getName().length()-4,archivo.getName().length());
         System.out.println(extension);
 
-        while (extension.equals(".txt")||extension.equals(".TXT")) {
+        while (!extension.equals(".txt")) {
             System.out.println("El archivo se encontró, pero no es un archivo de texto, (requiere extension)");
-
-            
+            name = sc.nextLine();
+             archivo = new File(name);
+             while (!archivo.exists()) {
+                System.out.println("El archivo no existe, por favor ingresa una ruta valida");
+                 name = sc.nextLine();
+                 archivo = new File(name);
+                
+            }
+            extension = archivo.getName().substring(archivo.getName().length()-4,archivo.getName().length());
         }
 
         FileReader f = new FileReader(name);
