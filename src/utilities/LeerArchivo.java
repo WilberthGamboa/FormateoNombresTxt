@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class LeerArchivo {
-
+                
     public LinkedList<String> muestraContenido() throws FileNotFoundException, IOException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Inserte la ruta de su archivo");
@@ -23,6 +23,6 @@ public class LeerArchivo {
         b.close();
         sc.close();
         return nombresSinConvertir;
-    }
+    }   
 
 }
