@@ -21,7 +21,7 @@ public class LeerArchivo {
             nombresSinConvertir.push(cadenaActual);
         }
         b.close();
-
+        sc.close();
         return nombresSinConvertir;
     }
 
