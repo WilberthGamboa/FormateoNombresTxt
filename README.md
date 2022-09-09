@@ -2,4 +2,4 @@
 
 Diagrama de clase
 
-<img src="Class Diagram0.png">
+<img src="classDiagram/ClassDiagram0.png">
