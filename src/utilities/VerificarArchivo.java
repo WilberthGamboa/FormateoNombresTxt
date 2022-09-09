@@ -21,11 +21,11 @@ public class VerificarArchivo {
     public File verificarExtension(File archivo,Scanner sc){
      
         String extension = archivo.getName().substring(archivo.getName().length()-4,archivo.getName().length());
-        System.out.println(extension);
+       // System.out.println(extension);
 
         while (!extension.equals(".txt")) {
             System.out.println("El archivo se encontró, pero no es un archivo de texto, (requiere extension)");
-                String name = sc.nextLine();
+            String name = sc.nextLine();
              archivo = new File(name);
              archivo = verificarExistenciaArchivo(archivo, sc);
             extension = archivo.getName().substring(archivo.getName().length()-4,archivo.getName().length());
