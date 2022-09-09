@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class VerificarArchivo {
 
-    public File verificarExistenciaArchivo(File archivo){
-        Scanner sc = new Scanner(System.in);
+    public File verificarExistenciaArchivo(File archivo,Scanner sc){
+       
         while (!archivo.exists()) {
             System.out.println("El archivo no existe, por favor ingresa una ruta valida");
             
@@ -18,8 +18,8 @@ public class VerificarArchivo {
         return archivo;
     }
 
-    public File verificarExtension(File archivo){
-        Scanner sc = new Scanner(System.in);
+    public File verificarExtension(File archivo,Scanner sc){
+     
         String extension = archivo.getName().substring(archivo.getName().length()-4,archivo.getName().length());
         System.out.println(extension);
 
@@ -27,7 +27,7 @@ public class VerificarArchivo {
             System.out.println("El archivo se encontró, pero no es un archivo de texto, (requiere extension)");
                 String name = sc.nextLine();
              archivo = new File(name);
-             archivo = verificarExistenciaArchivo(archivo);
+             archivo = verificarExistenciaArchivo(archivo, sc);
             extension = archivo.getName().substring(archivo.getName().length()-4,archivo.getName().length());
         }
         return archivo;
