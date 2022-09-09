@@ -11,25 +11,23 @@ import java.util.Scanner;
 public class LeerArchivo {
 
     public LinkedList<String> muestraContenido() throws FileNotFoundException, IOException {
+        // lectura archivo
         Scanner sc = new Scanner(System.in);
-
         System.out.println("Inserte la ruta de su archivo");
-
         String name = sc.nextLine();
+        // Linked list para para guardar los datos
         LinkedList<String> nombresSinConvertir = new LinkedList<String>();
-        String cadenaActual;
-        File archivo = new File(name);
-       
-        while (!archivo.exists()) {
-            System.out.println("El archivo no existe, por favor ingresa una ruta valida");
 
-             name = sc.nextLine();
-             archivo = new File(name);
-            
-        }
-        FileReader f = new FileReader(name);
-   
+        File archivo = new File(name);
+
+        VerificarArchivo verificarArchivo = new VerificarArchivo();
+        archivo = verificarArchivo.verificarExistenciaArchivo(archivo, sc);
+        archivo = verificarArchivo.verificarExtension(archivo, sc);
+
+        FileReader f = new FileReader(archivo);
         BufferedReader b = new BufferedReader(f);
+
+        String cadenaActual;
         while ((cadenaActual = b.readLine()) != null) {
             nombresSinConvertir.push(cadenaActual);
         }
