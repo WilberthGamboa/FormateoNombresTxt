@@ -21,8 +21,8 @@ El programa requiere de escribir la ruta completa en donde se encuentra alojado 
 Ejemplo:
 C:\Users\wwil\Desktop\FormateoNombresTxt\nombres.txt
 ## Implementación
-En caso de no encontrar la ruta el programa manda un aviso al usario
-En caso de que la extensión no sea la correcta manda un aviso al usuario
+1. En caso de no encontrar la ruta el programa manda un aviso al usario
+2. En caso de que la extensión no sea la correcta manda un aviso al usuario
 
 ## Diagrama de clase
 <img src="classDiagram/ClassDiagram0.png"> </img> 
