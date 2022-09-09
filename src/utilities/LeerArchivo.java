@@ -19,31 +19,16 @@ public class LeerArchivo {
         LinkedList<String> nombresSinConvertir = new LinkedList<String>();
         String cadenaActual;
         File archivo = new File(name);
+
+        //INVOCAR FUNCION
+        VerificarArchivo verificarArchivo = new VerificarArchivo();
+        archivo=verificarArchivo.verificarExistenciaArchivo(archivo);
+        archivo= verificarArchivo.verificarExtension(archivo);
+        
+
        
-        while (!archivo.exists()) {
-            System.out.println("El archivo no existe, por favor ingresa una ruta valida");
-             name = sc.nextLine();
-             archivo = new File(name);
-            
-        }
 
-        String extension = archivo.getName().substring(archivo.getName().length()-4,archivo.getName().length());
-        System.out.println(extension);
-
-        while (!extension.equals(".txt")) {
-            System.out.println("El archivo se encontró, pero no es un archivo de texto, (requiere extension)");
-            name = sc.nextLine();
-             archivo = new File(name);
-             while (!archivo.exists()) {
-                System.out.println("El archivo no existe, por favor ingresa una ruta valida");
-                 name = sc.nextLine();
-                 archivo = new File(name);
-                
-            }
-            extension = archivo.getName().substring(archivo.getName().length()-4,archivo.getName().length());
-        }
-
-        FileReader f = new FileReader(name);
+        FileReader f = new FileReader(archivo);
    
         BufferedReader b = new BufferedReader(f);
         while ((cadenaActual = b.readLine()) != null) {
